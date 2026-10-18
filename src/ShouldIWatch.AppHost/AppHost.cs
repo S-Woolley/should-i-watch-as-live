@@ -3,13 +3,12 @@ var builder = DistributedApplication.CreateBuilder(args);
 // Deployment target: Azure Container Apps (used by `azd` / `aspire publish`).
 builder.AddAzureContainerAppEnvironment("env");
 
-// Azure Database for PostgreSQL Flexible Server in Azure; a local Postgres container in dev.
-var postgres = builder.AddAzurePostgresFlexibleServer("postgres")
-    .RunAsContainer(pg => pg
-        .WithDataVolume()
-        .WithPgAdmin());
+// Azure SQL Database (free offer, auto-pauses) in Azure; a local SQL Server container in dev.
+var sql = builder.AddAzureSqlServer("sql")
+    .RunAsContainer(container => container
+        .WithDataVolume());
 
-var db = postgres.AddDatabase("appdb");
+var db = sql.AddDatabase("appdb");
 
 var api = builder.AddProject<Projects.ShouldIWatch_Api>("api")
     .WithReference(db)

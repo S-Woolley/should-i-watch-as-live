@@ -1,4 +1,3 @@
-using Npgsql;
 using ShouldIWatch.Api.Data;
 using ShouldIWatch.Database;
 
@@ -6,12 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-// Registers NpgsqlDataSource (+ health check and telemetry). In Azure it authenticates with Entra ID.
-builder.AddAzureNpgsqlDataSource("appdb");
+// Registers SqlConnection (+ health check and telemetry). In Azure it authenticates with Entra ID.
+builder.AddSqlServerClient("appdb");
 
 builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
-builder.Services.AddSingleton<GreetingRepository>();
+builder.Services.AddScoped<GreetingRepository>();
 
 var app = builder.Build();
 
@@ -42,10 +41,11 @@ app.Run();
 
 static void MigrateDatabase(WebApplication app)
 {
-    var dataSource = app.Services.GetRequiredService<NpgsqlDataSource>();
+    var connectionString = app.Configuration.GetConnectionString("appdb")
+        ?? throw new InvalidOperationException("Connection string 'appdb' is not configured.");
     var logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("DbUp");
 
-    var result = DatabaseMigrator.Migrate(dataSource, new DbUpLogger(logger));
+    var result = DatabaseMigrator.Migrate(connectionString, new DbUpLogger(logger));
     if (!result.Successful)
     {
         throw new InvalidOperationException("Database migration failed.", result.Error);

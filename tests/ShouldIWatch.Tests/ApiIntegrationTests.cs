@@ -2,10 +2,10 @@ using System.Net.Http.Json;
 
 namespace ShouldIWatch.Tests;
 
-/// <summary>Starts the whole AppHost (requires Docker) and exercises the API against a real Postgres.</summary>
+/// <summary>Starts the whole AppHost (requires Docker) and exercises the API against a real SQL Server.</summary>
 public sealed class ApiIntegrationTests
 {
-    // Generous: the first run pulls the Postgres image.
+    // Generous: the first run pulls the SQL Server image (~1.5 GB).
     private static readonly TimeSpan StartupTimeout = TimeSpan.FromMinutes(5);
 
     private sealed record Greeting(int Id, string Message, DateTime CreatedAt);
@@ -26,6 +26,6 @@ public sealed class ApiIntegrationTests
         var greeting = await httpClient.GetFromJsonAsync<Greeting>("/api/greeting", cancellationToken);
 
         Assert.NotNull(greeting);
-        Assert.Equal("Hello from Postgres!", greeting.Message);
+        Assert.Equal("Hello from Azure SQL!", greeting.Message);
     }
 }

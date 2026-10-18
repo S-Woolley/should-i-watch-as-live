@@ -2,8 +2,6 @@ using System.Reflection;
 using DbUp;
 using DbUp.Engine;
 using DbUp.Engine.Output;
-using DbUp.Postgresql;
-using Npgsql;
 
 namespace ShouldIWatch.Database;
 
@@ -15,12 +13,16 @@ public static class DatabaseMigrator
 {
     public static Assembly ScriptsAssembly => typeof(DatabaseMigrator).Assembly;
 
-    public static DatabaseUpgradeResult Migrate(NpgsqlDataSource dataSource, IUpgradeLog log)
+    /// <param name="connectionString">
+    /// SQL Server connection string. In Azure it uses Entra ID (managed identity) authentication,
+    /// which Microsoft.Data.SqlClient handles, so no password is involved.
+    /// </param>
+    public static DatabaseUpgradeResult Migrate(string connectionString, IUpgradeLog log)
     {
-        ArgumentNullException.ThrowIfNull(dataSource);
+        ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
 
         var upgrader = DeployChanges.To
-            .PostgresqlDatabase(new PostgresqlConnectionManager(dataSource))
+            .SqlDatabase(connectionString)
             .WithScriptsEmbeddedInAssembly(ScriptsAssembly, IsMigrationScript)
             .WithTransactionPerScript()
             .LogTo(log)

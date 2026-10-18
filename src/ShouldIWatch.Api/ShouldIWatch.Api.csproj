@@ -6,7 +6,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Azure.Npgsql" />
+    <PackageReference Include="Aspire.Microsoft.Data.SqlClient" />
     <PackageReference Include="Dapper" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
   </ItemGroup>

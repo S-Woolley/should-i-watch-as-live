@@ -4,15 +4,15 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup Label="Aspire">
-    <PackageVersion Include="Aspire.Azure.Npgsql" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Microsoft.Data.SqlClient" Version="13.6.1" />
     <PackageVersion Include="Aspire.Hosting.Azure.AppContainers" Version="13.6.1" />
-    <PackageVersion Include="Aspire.Hosting.Azure.PostgreSQL" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.6.1" />
     <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.6.1" />
     <PackageVersion Include="Aspire.Hosting.Testing" Version="13.6.1" />
   </ItemGroup>
   <ItemGroup Label="Data">
     <PackageVersion Include="Dapper" Version="2.1.89" />
-    <PackageVersion Include="dbup-postgresql" Version="7.0.1" />
+    <PackageVersion Include="dbup-sqlserver" Version="7.2.0" />
   </ItemGroup>
   <ItemGroup Label="Service defaults">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
@@ -27,6 +27,8 @@
   <ItemGroup Label="Transitive security pins">
     <!-- Aspire.Hosting 13.6.1 references 2.5.302 (GHSA-qhrr-8q5h-9q3h). Remove once Aspire ships a fixed version. -->
     <PackageVersion Include="MessagePack" Version="2.5.307" />
+    <!-- Microsoft.Data.SqlClient 7.0.2 references vulnerable versions (GHSA-846f-f764-76mx, GHSA-2fmv-rv2c-59x7). -->
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
   </ItemGroup>
   <ItemGroup Label="Testing">
     <PackageVersion Include="xunit.v3" Version="4.0.2" />

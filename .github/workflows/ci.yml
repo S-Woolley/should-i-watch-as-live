@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: dotnet build ShouldIWatch.slnx --no-restore -c Release
 
-      # Includes the Aspire integration test, which starts Postgres in Docker (available on ubuntu runners).
+      # Includes the Aspire integration test, which starts SQL Server in Docker (available on ubuntu runners).
       - name: Test
         run: dotnet test --solution ShouldIWatch.slnx --no-build -c Release
 
