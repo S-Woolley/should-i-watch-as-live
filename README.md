@@ -62,6 +62,8 @@ azd up
 
 The free offer includes a monthly compute and storage allowance; when it is used up the database pauses until the next month instead of billing. A paused database can take some seconds to resume on the first connection after being idle.
 
+The API container app scales to zero when idle (`minReplicas: 0`), so compute costs are close to nothing; the first request after an idle period waits a few seconds for a cold start. The main fixed cost is the Basic container registry (~USD 5/month).
+
 Then connect GitHub Actions (creates federated OIDC credentials and repo variables, no secrets):
 
 ```bash

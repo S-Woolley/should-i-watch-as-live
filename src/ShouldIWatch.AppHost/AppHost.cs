@@ -15,7 +15,10 @@ var api = builder.AddProject<Projects.ShouldIWatch_Api>("api")
     .WaitFor(db)
     // HTTP endpoint so the check does not depend on a trusted dev certificate (e.g. in CI).
     .WithHttpHealthCheck("/health", endpointName: "http")
-    .WithExternalHttpEndpoints();
+    .WithExternalHttpEndpoints()
+    // Personal site: scale to zero when idle so compute costs ~nothing.
+    // Trade-off: the first request after idle waits a few seconds for a cold start.
+    .PublishAsAzureContainerApp((_, app) => app.Template.Scale.MinReplicas = 0);
 
 var web = builder.AddViteApp("web", "../web")
     .WithReference(api)
