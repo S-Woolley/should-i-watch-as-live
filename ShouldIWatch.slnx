@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ShouldIWatch.Api/ShouldIWatch.Api.csproj" />
+    <Project Path="src/ShouldIWatch.AppHost/ShouldIWatch.AppHost.csproj" />
+    <Project Path="src/ShouldIWatch.Database/ShouldIWatch.Database.csproj" />
+    <Project Path="src/ShouldIWatch.ServiceDefaults/ShouldIWatch.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ShouldIWatch.Tests/ShouldIWatch.Tests.csproj" />
+  </Folder>
+</Solution>

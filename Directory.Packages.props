@@ -1,0 +1,35 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup Label="Aspire">
+    <PackageVersion Include="Aspire.Azure.Npgsql" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Hosting.Azure.AppContainers" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Hosting.Azure.PostgreSQL" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.6.1" />
+    <PackageVersion Include="Aspire.Hosting.Testing" Version="13.6.1" />
+  </ItemGroup>
+  <ItemGroup Label="Data">
+    <PackageVersion Include="Dapper" Version="2.1.89" />
+    <PackageVersion Include="dbup-postgresql" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup Label="Service defaults">
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.10.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.10.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.17.0" />
+  </ItemGroup>
+  <ItemGroup Label="Transitive security pins">
+    <!-- Aspire.Hosting 13.6.1 references 2.5.302 (GHSA-qhrr-8q5h-9q3h). Remove once Aspire ships a fixed version. -->
+    <PackageVersion Include="MessagePack" Version="2.5.307" />
+  </ItemGroup>
+  <ItemGroup Label="Testing">
+    <PackageVersion Include="xunit.v3" Version="4.0.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
+  </ItemGroup>
+</Project>

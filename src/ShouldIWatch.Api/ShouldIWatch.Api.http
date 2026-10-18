@@ -1,0 +1,6 @@
+@ShouldIWatch.Api_HostAddress = http://localhost:5514
+
+GET {{ShouldIWatch.Api_HostAddress}}/api/greeting
+Accept: application/json
+
+###

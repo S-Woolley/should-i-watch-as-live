@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "apphost",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "src/ShouldIWatch.AppHost", "--launch-profile", "https"],
+      "port": 17253,
+      "url": "https://localhost:17253"
+    }
+  ]
+}

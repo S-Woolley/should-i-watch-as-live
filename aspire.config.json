@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "src/ShouldIWatch.AppHost/ShouldIWatch.AppHost.csproj"
+  }
+}
