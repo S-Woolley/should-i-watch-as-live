@@ -24,6 +24,9 @@ jobs:
       AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
       AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
       AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
+      # Secret AppHost parameters, set by `azd pipeline config` as AZURE_<PARAMETER_NAME> secrets.
+      # azd maps them back to parameters, so `azd provision --no-prompt` doesn't need to prompt.
+      AZURE_CFBD_API_KEY: ${{ secrets.AZURE_CFBD_API_KEY }}
     steps:
       - uses: actions/checkout@v5
 

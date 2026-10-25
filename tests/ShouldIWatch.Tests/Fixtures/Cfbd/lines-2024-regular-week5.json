@@ -1,0 +1,98 @@
+[
+  {
+    "id": 401001,
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 5,
+    "startDate": "2024-09-28T16:00:00.000Z",
+    "homeTeamId": 333,
+    "homeTeam": "Alabama",
+    "homeConference": "SEC",
+    "homeClassification": "fbs",
+    "homeScore": null,
+    "awayTeamId": 61,
+    "awayTeam": "Georgia",
+    "awayConference": "SEC",
+    "awayClassification": "fbs",
+    "awayScore": null,
+    "lines": [
+      {
+        "provider": "Bovada",
+        "spread": -3,
+        "formattedSpread": "Alabama -3",
+        "spreadOpen": -3,
+        "overUnder": 50.5,
+        "overUnderOpen": 51,
+        "homeMoneyline": null,
+        "awayMoneyline": null
+      },
+      {
+        "provider": "DraftKings",
+        "spread": -2.5,
+        "formattedSpread": "Alabama -2.5",
+        "spreadOpen": -2.5,
+        "overUnder": 50.5,
+        "overUnderOpen": 51,
+        "homeMoneyline": null,
+        "awayMoneyline": null
+      }
+    ]
+  },
+  {
+    "id": 401002,
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 5,
+    "startDate": "2024-09-28T16:00:00.000Z",
+    "homeTeamId": 194,
+    "homeTeam": "Ohio State",
+    "homeConference": "Big Ten",
+    "homeClassification": "fbs",
+    "homeScore": null,
+    "awayTeamId": 2294,
+    "awayTeam": "Iowa",
+    "awayConference": "Big Ten",
+    "awayClassification": "fbs",
+    "awayScore": null,
+    "lines": [
+      {
+        "provider": "ESPN Bet",
+        "spread": null,
+        "formattedSpread": "",
+        "spreadOpen": null,
+        "overUnder": 50.5,
+        "overUnderOpen": 51,
+        "homeMoneyline": null,
+        "awayMoneyline": null
+      },
+      {
+        "provider": "Bovada",
+        "spread": -27.5,
+        "formattedSpread": "Ohio State -27.5",
+        "spreadOpen": -27.5,
+        "overUnder": 50.5,
+        "overUnderOpen": 51,
+        "homeMoneyline": null,
+        "awayMoneyline": null
+      }
+    ]
+  },
+  {
+    "id": 401003,
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 5,
+    "startDate": "2024-09-28T16:00:00.000Z",
+    "homeTeamId": 245,
+    "homeTeam": "Texas A&M",
+    "homeConference": "SEC",
+    "homeClassification": "fbs",
+    "homeScore": null,
+    "awayTeamId": 8,
+    "awayTeam": "Arkansas",
+    "awayConference": "SEC",
+    "awayClassification": "fbs",
+    "awayScore": null,
+    "lines": []
+  }
+]

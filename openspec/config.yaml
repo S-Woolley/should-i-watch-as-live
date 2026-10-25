@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Purpose: a website that tells users which completed sports games are worth watching "as live"
+  (entertaining games rather than one-sided blowouts) without spoiling the score or events of the game.
+  Spoiler-free is a hard rule: no UI, API response, URL, page title or error message may reveal scores,
+  results or key events of a game the user hasn't chosen to reveal.
+  Hosting must stay within Azure free/low-cost tiers (Azure SQL free offer, API container scales to zero),
+  so designs should tolerate cold starts and avoid always-on resources.
+  Every change needs tests: xUnit for the API, Vitest for src/web.
+  Never commit, push or open a PR without asking first.
+
+# Project context (optional)
+# Add only constraints that should guide OpenSpec artifacts and workflows.
+# Include constraints an agent cannot infer by reading the code.
+# Keep general project documentation and discoverable codebase facts out.
+# Example:
+#   context: |
+#     Designs and tasks must cover Windows, macOS, and Linux
+#     Write all artifacts in Spanish
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

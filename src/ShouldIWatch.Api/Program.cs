@@ -1,3 +1,4 @@
+using ShouldIWatch.Api.CollegeFootball;
 using ShouldIWatch.Api.Data;
 using ShouldIWatch.Database;
 
@@ -11,6 +12,7 @@ builder.AddSqlServerClient("appdb");
 builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<GreetingRepository>();
+builder.Services.AddCollegeFootball();
 
 var app = builder.Build();
 
@@ -30,6 +32,8 @@ api.MapGet("greeting", async (GreetingRepository repository, CancellationToken c
         ? Results.Ok(greeting)
         : Results.NotFound())
     .WithName("GetGreeting");
+
+app.MapCollegeFootball();
 
 app.MapDefaultEndpoints();
 

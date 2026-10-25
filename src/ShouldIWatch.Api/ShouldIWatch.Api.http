@@ -4,3 +4,20 @@ GET {{ShouldIWatch.Api_HostAddress}}/api/greeting
 Accept: application/json
 
 ###
+
+# Weeks of the current college football season and the default week.
+GET {{ShouldIWatch.Api_HostAddress}}/api/college-football/weeks
+Accept: application/json
+
+###
+
+# One regular-season week (spoiler-free: teams, kickoff and tier only).
+GET {{ShouldIWatch.Api_HostAddress}}/api/college-football/weeks/8
+Accept: application/json
+
+###
+
+GET {{ShouldIWatch.Api_HostAddress}}/api/college-football/weeks/postseason
+Accept: application/json
+
+###
