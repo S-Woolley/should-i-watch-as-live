@@ -1,0 +1,48 @@
+[
+  {
+    "id": 402001,
+    "season": 2024,
+    "week": 1,
+    "seasonType": "postseason",
+    "startDate": "2025-01-10T00:30:00.000Z",
+    "startTimeTBD": false,
+    "completed": true,
+    "neutralSite": false,
+    "conferenceGame": false,
+    "attendance": 92000,
+    "venueId": 3657,
+    "venue": "Stadium",
+    "homeId": 251,
+    "homeTeam": "Texas",
+    "homeConference": "SEC",
+    "homeClassification": "fbs",
+    "homePoints": 14,
+    "homeLineScores": [
+      0,
+      7,
+      0,
+      7
+    ],
+    "homePostgameWinProbability": 0.6,
+    "homePregameElo": 1890,
+    "homePostgameElo": 1900,
+    "awayId": 194,
+    "awayTeam": "Ohio State",
+    "awayConference": "Big Ten",
+    "awayClassification": "fbs",
+    "awayPoints": 28,
+    "awayLineScores": [
+      7,
+      7,
+      7,
+      7
+    ],
+    "awayPostgameWinProbability": 0.4,
+    "awayPregameElo": 1910,
+    "awayPostgameElo": 1900,
+    "excitementIndex": 5.1,
+    "highlights": null,
+    "notes": null,
+    "playoff": null
+  }
+]

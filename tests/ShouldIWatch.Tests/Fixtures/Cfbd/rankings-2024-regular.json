@@ -1,0 +1,82 @@
+[
+  {
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 14,
+    "polls": [
+      {
+        "poll": "AP Top 25",
+        "isFinal": false,
+        "ranks": [
+          {
+            "rank": 1,
+            "teamId": 251,
+            "school": "Texas",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 990
+          },
+          {
+            "rank": 5,
+            "teamId": 194,
+            "school": "Ohio State",
+            "conference": "Big Ten",
+            "firstPlaceVotes": 0,
+            "points": 950
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 15,
+    "polls": [
+      {
+        "poll": "AP Top 25",
+        "isFinal": false,
+        "ranks": [
+          {
+            "rank": 2,
+            "teamId": 251,
+            "school": "Texas",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 980
+          },
+          {
+            "rank": 6,
+            "teamId": 194,
+            "school": "Ohio State",
+            "conference": "Big Ten",
+            "firstPlaceVotes": 0,
+            "points": 940
+          }
+        ]
+      },
+      {
+        "poll": "Playoff Committee Rankings",
+        "isFinal": false,
+        "ranks": [
+          {
+            "rank": 3,
+            "teamId": 251,
+            "school": "Texas",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 970
+          },
+          {
+            "rank": 8,
+            "teamId": 194,
+            "school": "Ohio State",
+            "conference": "Big Ten",
+            "firstPlaceVotes": 0,
+            "points": 920
+          }
+        ]
+      }
+    ]
+  }
+]

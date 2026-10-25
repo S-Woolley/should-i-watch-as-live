@@ -1,0 +1,69 @@
+[
+  {
+    "season": 2024,
+    "seasonType": "regular",
+    "week": 5,
+    "polls": [
+      {
+        "poll": "Coaches Poll",
+        "isFinal": false,
+        "ranks": [
+          {
+            "rank": 1,
+            "teamId": 61,
+            "school": "Georgia",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 990
+          },
+          {
+            "rank": 2,
+            "teamId": 194,
+            "school": "Ohio State",
+            "conference": "Big Ten",
+            "firstPlaceVotes": 0,
+            "points": 980
+          },
+          {
+            "rank": 5,
+            "teamId": 333,
+            "school": "Alabama",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 950
+          }
+        ]
+      },
+      {
+        "poll": "AP Top 25",
+        "isFinal": false,
+        "ranks": [
+          {
+            "rank": 2,
+            "teamId": 61,
+            "school": "Georgia",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 980
+          },
+          {
+            "rank": 3,
+            "teamId": 194,
+            "school": "Ohio State",
+            "conference": "Big Ten",
+            "firstPlaceVotes": 0,
+            "points": 970
+          },
+          {
+            "rank": 4,
+            "teamId": 333,
+            "school": "Alabama",
+            "conference": "SEC",
+            "firstPlaceVotes": 0,
+            "points": 960
+          }
+        ]
+      }
+    ]
+  }
+]

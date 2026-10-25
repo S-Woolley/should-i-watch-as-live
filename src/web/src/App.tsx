@@ -1,46 +1,28 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import './App.css';
+import Layout from './Layout';
+import CollegeFootballPage from './pages/CollegeFootballPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
-interface Greeting {
-  id: number;
-  message: string;
-  createdAt: string;
+/** The site's routes, without a router so tests can render them in a MemoryRouter. */
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="college-football" element={<CollegeFootballPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
+  );
 }
 
-type State =
-  | { status: 'loading' }
-  | { status: 'loaded'; greeting: Greeting }
-  | { status: 'error'; message: string };
-
 function App() {
-  const [state, setState] = useState<State>({ status: 'loading' });
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    fetch('/api/greeting', { signal: controller.signal })
-      .then(async (response) => {
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-        const greeting = (await response.json()) as Greeting;
-        setState({ status: 'loaded', greeting });
-      })
-      .catch((err: unknown) => {
-        if (controller.signal.aborted) return;
-        setState({ status: 'error', message: err instanceof Error ? err.message : 'Request failed' });
-      });
-
-    return () => controller.abort();
-  }, []);
-
   return (
-    <main className="app">
-      <h1>Should I watch it live?</h1>
-      {state.status === 'loading' && <p role="status">Loading…</p>}
-      {state.status === 'error' && <p role="alert">Couldn't load greeting: {state.message}</p>}
-      {state.status === 'loaded' && <p className="greeting">{state.greeting.message}</p>}
-    </main>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

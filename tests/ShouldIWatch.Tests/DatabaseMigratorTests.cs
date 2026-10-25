@@ -9,10 +9,13 @@ public sealed class DatabaseMigratorTests
         .Where(DatabaseMigrator.IsMigrationScript)
         .ToArray();
 
-    [Fact]
-    public void MigrationScriptsAreEmbedded()
+    [Theory]
+    [InlineData("0001_create_greeting.sql")]
+    [InlineData("0002_create_cfb_games_and_sync_state.sql")]
+    [InlineData("0003_create_cfb_rivalry.sql")]
+    public void MigrationScriptsAreEmbedded(string fileName)
     {
-        Assert.Contains(Scripts, name => name.EndsWith("0001_create_greeting.sql", StringComparison.Ordinal));
+        Assert.Contains(Scripts, name => name.EndsWith(fileName, StringComparison.Ordinal));
     }
 
     [Fact]

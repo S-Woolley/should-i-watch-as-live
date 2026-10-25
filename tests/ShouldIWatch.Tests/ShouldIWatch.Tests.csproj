@@ -8,11 +8,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\ShouldIWatch.AppHost\ShouldIWatch.AppHost.csproj" />
+    <!-- Aliased: both the API and the AppHost have a top-level Program class. -->
+    <ProjectReference Include="..\..\src\ShouldIWatch.Api\ShouldIWatch.Api.csproj" Aliases="global,api" />
     <ProjectReference Include="..\..\src\ShouldIWatch.Database\ShouldIWatch.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.Testing" />
+    <PackageReference Include="Dapper" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
     <PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.runner.visualstudio" />
   </ItemGroup>
@@ -23,6 +28,10 @@
     <Using Include="Aspire.Hosting.ApplicationModel" />
     <Using Include="Aspire.Hosting.Testing" />
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Fixtures\**\*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
